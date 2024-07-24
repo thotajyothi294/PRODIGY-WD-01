@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links li {
+            margin: 0 10px;
+        }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .bar {
+            height: 3px;
+            width: 25px;
+            background: #fff;
+            margin: 4px 0;
+        }
+        section {
+            padding: 60px 20px;
+            text-align: center;
+            padding-top: 80px; /* Adjusting for fixed header */
+        }
+        .hero-section {
+            height: 100vh;
+            background: url('images/hero-bg.jpg') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+        .hero-section h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .hero-section p {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+        .hero-img {
+            width: 100%;
+            max-width: 500px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        .btn {
+            background: #f4b41a;
+            color: #333;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .about-img, .contact-img, .skills-img {
+            width: 100%;
+            max-width: 500px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        .skills-list {
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .skills-list ul {
+            list-style: none;
+        }
+        .skills-list li {
+            background: #f4b41a;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: -100%;
+                background: #333;
+                transition: all 0.3s ease;
+            }
+            .nav-links li {
+                text-align: center;
+                margin: 10px 0;
+            }
+            .nav-links.active {
+                left: 0;
+            }
+            .menu-toggle {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">My Personal Website</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+    <section id="home" class="hero-section">
+        <h1>Welcome to My Personal Website</h1>
+        <p>Explore my skills and get in touch</p>
+        <a href="#about" class="btn">Learn More</a>
+        <img src="images/hero.jpg" alt="Hero Image" class="hero-img">
+    </section>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hi, I'm [Your Name], a passionate web developer with a knack for creating beautiful and functional websites. I love to learn new technologies and apply them in my projects.</p>
+        <img src="images/about.jpg" alt="About Me" class="about-img">
+    </section>
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-list">
+            <ul>
+                <li>HTML & CSS</li>
+                <li>JavaScript</li>
+                <li>Responsive Design</li>
+                <li>React</li>
+                <li>Node.js</li>
+                <li>Python</li>
+            </ul>
+        </div>
+        <img src="images/skills.jpg" alt="Skills" class="skills-img">
+    </section>
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>If you have any questions or want to work together, feel free to reach out. You can email me at contact@mypersonalwebsite.com or call me at (123) 456-7890.</p>
+        <img src="images/contact.jpg" alt="Contact Me" class="contact-img">
+    </section>
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
